@@ -1,22 +1,28 @@
-<div class="center">
-        <div class="row card-group">
-            <div class="col-5">
-                <div class="card w-100 ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm" id="centerImage">
-                                <img class="center-block" src="http://www.imagen.com.mx/assets/img/imagen_share.png" style="width:100%">
-                            </div>
-                            <div class="col-sm bottom-align-text">
-                                <h4>Origen-destino</h4>
-                                <h5 style="white-space: nowrap;">dia de vuelo</h5>
-                                <h6>coste COP</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<md-content class="md-padding">
+    <div layout="row" ng-repeat="flightList in flightMatrix">
+            <div flex-xs flex-gt-xs="33" ng-repeat="flight in flightList"  layout="column" style="display: flex;
+        align-items: stretch;">
+                <md-card  >
+                    <img ng-src={{flight.flightImageUrl}} class="md-card-image" alt="Washed Out" style="max-height: 150px;min-height: 150px">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{flight.airline}}</span>
+                            <div>
+                                <b>Fecha: </b>{{flight.flightDay}}</div>
+                            <div>
+                                <b>Costo: </b>${{flight.finalCost}} COP</div>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content layout="row" layout-align="center">
+                        <div style="color: #5D4949; font-family: 'Source Sans Pro', sans-serif; font-size: 34px">{{flight.origin}} - {{flight.destiny}}</div>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end">
+                        <md-button class="md-primary md-hue-2" ng-click="reservate(flight.id)">Reservar</md-button>
+                    </md-card-actions>
+                </md-card>
+
             </div>
         </div>
-        <br>
-        <br>
+
     </div>
+</md-content>

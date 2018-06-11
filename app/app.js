@@ -4,10 +4,23 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.home',
-  'myApp.version'
+  'myApp.version',
+  'ngMaterial', 
+  'ngMessages'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
   $routeProvider.otherwise({redirectTo: '/home'});
+}]);
+
+
+angular.module('myApp')
+
+.controller('IndexCtrl', ['$scope',function($scope) {
+  $scope.goto = function(page) {
+    console.log('In page: '+ page);
+  };
+  
+
 }]);
