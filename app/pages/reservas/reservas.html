@@ -1,0 +1,19 @@
+<h1 class="md-display-3" style="text-align: center;font-family:Times New Roman;color:teal">Consultar Reservas</h1>
+<hr>
+<div layout="column"></div>
+<md-content layout-padding style="padding-bottom: 0px;background-color: rgb(234, 229, 229);">
+    <form name="reservasForm" ng-submit="consultarReservas()">
+        <div layout="row" layout-align="center">
+            <md-input-container class="md-block">
+                <label>Numero de cedula</label>
+                <input type="number" required md-no-asterisk name="numCedula" ng-model="reservasForm.cedula">
+                <div ng-messages="reservasForm.description.$error">
+                    <div ng-message="required">Este campo es requerido.</div>
+                </div>
+            </md-input-container>
+            <md-button type="submit" class="md-raised md-primary" style="height: 20px;">Consultar reservas</md-button>
+        </div>
+    </form>
+</md-content>
+</div>
+<hr>

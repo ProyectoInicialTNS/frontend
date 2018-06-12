@@ -13,6 +13,7 @@ angular.module('myApp.home', ['ngRoute'])
   .controller('HomeCtrl', ['$scope', 'ApiFlight', function ($scope, ApiFlight) {
     //define variables
     $scope.reservate = reservate;
+    $scope.currentNavItem = 'home';
 
     
     ApiFlight.getAllFlights().then(

@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.home',
+  'myApp.reservas',
   'myApp.version',
   'ngMaterial', 
   'ngMessages'
@@ -18,9 +19,5 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 angular.module('myApp')
 
 .controller('IndexCtrl', ['$scope',function($scope) {
-  $scope.goto = function(page) {
-    console.log('In page: '+ page);
-  };
-  
 
 }]);

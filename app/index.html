@@ -23,30 +23,25 @@
     <md-nav-bar md-no-ink-bar="disableInkBar" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
 
       <md-nav-item md-nav-href="#!/home" name="home">Listar vuelos</md-nav-item>
-      <md-nav-item md-nav-click="goto('consult')" name="consult" disabled>Consultar reservas</md-nav-item>
+      <md-nav-item md-nav-href="#!/reservas" name="reservas">Consultar reservas</md-nav-item>
     </md-nav-bar>
   </div>
   <div ng-view></div>
-
-
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
   <!--Controllers-->
   <script src="pages/home/home.js"></script>
+  <script src="pages/reservas/reservas.js"></script>
+
   <!--Services-->
   <script src="configuration/apiFlight.js"></script>
-  <!--<script src="home/home.js"></script>-->
-  <!--<script src="view2/view2.js"></script>-->
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
-
-
-
+  
   <!-- Angular Material requires Angular.js Libraries -->
-
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
