@@ -19,7 +19,7 @@
                         <div style="color: #5D4949; font-family: 'Source Sans Pro', sans-serif; font-size: 34px">{{flight.origin}} - {{flight.destiny}}</div>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end">
-                        <md-button class="md-primary md-hue-2" ng-click="reservate(flight.id)">Reservar</md-button>
+                        <md-button class="md-primary md-hue-2" ng-click="reservateDialog(flight.id,$event)">Reservar</md-button>
                     </md-card-actions>
                 </md-card>
 
@@ -28,3 +28,6 @@
 
     </div>
 </md-content>
+
+<md-dialog layout-padding>
+</md-dialog>

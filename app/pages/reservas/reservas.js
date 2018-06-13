@@ -8,11 +8,15 @@ angular.module('myApp.reservas', ['ngRoute'])
       controller: 'ReservasCtrl'
     });
   }])
-.controller('ReservasCtrl', ['$scope',function($scope) {
+.controller('ReservasCtrl', ['$scope','ApiUser','DisplayFlights',function($scope,ApiUser,DisplayFlights) {
     $scope.currentNavItem = 'reservas';
 
-    $scope.consultarReservas = function(){
-        alert($scope.reservasForm.cedula);
+    $scope.consultReservations = function(){
+        ApiUser.getAllUserFlights($scope.reservationForm.cedula).then(
+          response =>{
+            $scope.flightMatrix = DisplayFlights.obtainMatrix(response.data.map(DisplayFlights.formatAllDates), 3);
+          }
+        );
     }
 
 }]);
